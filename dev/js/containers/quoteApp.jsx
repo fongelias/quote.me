@@ -1,6 +1,9 @@
 //dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
+//styles
+require('../../scss/quoteApp.scss');
+
 
 //constants
 const quoteLibrary = [
@@ -43,8 +46,11 @@ class QuoteApp extends React.Component {
 	render() {
 		return (
 			<div className="quote-display">
-				<h1>{this.state.currentQuote.quote}</h1>
-				<p>{this.state.currentQuote.author}</p>
+				<div className="quote-container">
+					<i className="fa fa-quote-left"></i>
+					<span> {this.state.currentQuote.quote}</span>
+				</div>
+				<p>&mdash; {this.state.currentQuote.author}</p>
 				<button onClick={this.changeQuote}>New Quote</button>
 			</div>
 		)

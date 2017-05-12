@@ -1,0 +1,74 @@
+/*--- Colors ---*/
+$purple: #2d1651;
+$lightPurple: #3e2356;
+
+/*--- Mixin ---*/
+@mixin backgroundGradient($first-color, $second-color, $angle: 0deg) {
+	background: -webkit-linear-gradient($angle, $first-color, $second-color); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($angle, $first-color, $second-color); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($angle, $first-color, $second-color); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($angle, $first-color, $second-color);
+    background-repeat: no-repeat;
+}
+
+@mixin borderRadius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+/*--- Fonts ---*/
+html {
+	font-size: 62.5%; //Normalizes rem units to 10px
+}
+
+@font-face {
+	font-family: 'OpenSans-Regular';
+	src: url('../fonts/Open_Sans_WOFF/OpenSans-Regular.woff') format('WOFF');
+}
+
+/*--- Background ---*/
+.background {
+	@include backgroundGradient($lightPurple, $purple);
+	height: 100vh;
+	width: 100vw;
+}
+
+
+/*--- Quote Display ---*/
+.quote-display {
+	@include borderRadius(0.3rem);
+	background-color: white;
+	font-family: 'OpenSans-Regular';
+	height: 30rem;
+	width: 45rem;
+	padding: 3rem;
+	
+	.fa-quote-left {
+		font-size: 3rem;
+	}
+
+	.quote-container {
+		height: 20rem;
+
+		span {
+			font-size: 2.5rem;
+		}
+	}
+
+	p {
+		color: $purple;
+		font-size: 2rem;
+		text-align: right;
+	}
+
+	button {
+		@include backgroundGradient($lightPurple, $purple);
+		@include borderRadius(0.3rem);
+		height: 3rem;
+		color: white;
+		border: 0px;
+		font-size: 1.2rem;
+	}
+}
