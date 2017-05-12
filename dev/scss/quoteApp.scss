@@ -66,7 +66,8 @@ html {
 	button {
 		@include backgroundGradient($lightPurple, $purple);
 		@include borderRadius(0.3rem);
-		height: 3rem;
+		height: 4rem;
+		padding: 0rem 1rem;
 		color: white;
 		border: 0px;
 		font-size: 1.2rem;
