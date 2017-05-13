@@ -51,7 +51,9 @@ class QuoteApp extends React.Component {
 					<span> {this.state.currentQuote.quote}</span>
 				</div>
 				<p>&mdash; {this.state.currentQuote.author}</p>
-				<button onClick={this.changeQuote}>New Quote</button>
+				<div className="flex-right">
+					<button onClick={this.changeQuote}>New Quote</button>
+				</div>
 			</div>
 		)
 	}

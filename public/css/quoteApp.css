@@ -23,40 +23,48 @@ html {
 
 /*--- Quote Display ---*/
 .quote-display {
+  margin-left: auto;
+  margin-right: auto;
   -webkit-border-radius: 0.3rem;
   -moz-border-radius: 0.3rem;
   -ms-border-radius: 0.3rem;
   border-radius: 0.3rem;
   background-color: white;
   font-family: 'OpenSans-Regular';
-  height: 30rem;
+  min-height: 20rem;
   width: 45rem;
-  padding: 3rem; }
+  padding: 3rem;
+  margin-top: 7rem; }
   .quote-display .fa-quote-left {
     font-size: 3rem; }
   .quote-display .quote-container {
-    height: 20rem; }
+    min-height: 10rem; }
     .quote-display .quote-container span {
       font-size: 2.5rem; }
   .quote-display p {
     color: #2d1651;
     font-size: 2rem;
     text-align: right; }
+  .quote-display .flex-right {
+    display: flex;
+    justify-content: flex-end; }
   .quote-display button {
-    background: -webkit-linear-gradient(0deg, #3e2356, #2d1651);
-    /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(0deg, #3e2356, #2d1651);
-    /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(0deg, #3e2356, #2d1651);
-    /* For Firefox 3.6 to 15 */
-    background: linear-gradient(0deg, #3e2356, #2d1651);
-    background-repeat: no-repeat;
+    transition-timing-function: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    /* Safari */
+    transition: all 0.3s ease 0s;
     -webkit-border-radius: 0.3rem;
     -moz-border-radius: 0.3rem;
     -ms-border-radius: 0.3rem;
     border-radius: 0.3rem;
+    background-color: #2d1651;
     height: 4rem;
     padding: 0rem 1rem;
     color: white;
     border: 0px;
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    outline: none; }
+    .quote-display button:hover {
+      background-color: #241432; }
+    .quote-display button:active {
+      background-color: #3e2356; }

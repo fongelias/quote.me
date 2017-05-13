@@ -1,4 +1,5 @@
 /*--- Colors ---*/
+$darkPurple: #241432;
 $purple: #2d1651;
 $lightPurple: #3e2356;
 
@@ -11,11 +12,22 @@ $lightPurple: #3e2356;
     background-repeat: no-repeat;
 }
 
-@mixin borderRadius($radius) {
+@mixin transition($property: all, $duration: 0.5s, $timing-function: ease, $delay: 0s) {
+	transition-timing-function: $property $duration $timing-function $delay;
+	-webkit-transition: $property $duration $timing-function $delay; /* Safari */
+	transition: $property $duration $timing-function $delay;
+}
+
+@mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
       -ms-border-radius: $radius;
           border-radius: $radius;
+}
+
+@mixin push-center() {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*--- Fonts ---*/
@@ -38,19 +50,21 @@ html {
 
 /*--- Quote Display ---*/
 .quote-display {
-	@include borderRadius(0.3rem);
+	@include push-center();
+	@include border-radius(0.3rem);
 	background-color: white;
 	font-family: 'OpenSans-Regular';
-	height: 30rem;
+	min-height: 20rem;
 	width: 45rem;
 	padding: 3rem;
+	margin-top: 7rem;
 	
 	.fa-quote-left {
 		font-size: 3rem;
 	}
 
 	.quote-container {
-		height: 20rem;
+		min-height: 10rem;
 
 		span {
 			font-size: 2.5rem;
@@ -63,13 +77,29 @@ html {
 		text-align: right;
 	}
 
+	.flex-right {
+		display: flex;
+	    justify-content: flex-end;
+	}
+
 	button {
-		@include backgroundGradient($lightPurple, $purple);
-		@include borderRadius(0.3rem);
+		@include transition(all, 0.3s, ease);
+		@include border-radius(0.3rem);
+		background-color: $purple;
 		height: 4rem;
 		padding: 0rem 1rem;
 		color: white;
 		border: 0px;
 		font-size: 1.2rem;
+		outline: none;
+
+		&:hover {
+			background-color: $darkPurple;
+		}
+
+		&:active {
+			background-color: $lightPurple;
+		}
 	}
+
 }
