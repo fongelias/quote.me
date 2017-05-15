@@ -4,7 +4,7 @@
 ![Quote Me Front Page](/screenshots/quote.me.front_page.png)
 
 ## Implementation
-###Quote Generator
+### Quote Generator
 This quote generator was built on React in ES6, compiled with the webpack-babel package, and styled with SCSS. Font-awesome was used to include the large quote icon.
 
 
